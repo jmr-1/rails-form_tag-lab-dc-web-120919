@@ -3,3 +3,9 @@
     <div><%= link_to student.to_s, student_path(student) %></div>
   <% end %>
 </div>
+<br>
+<h3>Previously made student</h3>
+<%= session[:new_form_params] if session[:new_form_params] %>
+<br>
+
+<%= link_to('Make new student', new_student_path ) %>

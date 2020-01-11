@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>New Student Form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+    <h1>Make a new student!</h1>
+
+    <%= form_tag students_path do  %>
+
+        <label>First Name:</label>
+        <%= text_field_tag :'student[first_name]' %><br>
+        <label>Last Name:</label>
+        <%= text_field_tag :'student[last_name]' %><br>
+        <%= submit_tag "Submit Student" %>
+    <% end %>
+
+    <%= session[:new_form_params] if session[:new_form_params] %>
+    <br>
+    <%= link_to 'Go back to the list of students', students_path %>
+    </body>
+</html>
